@@ -3,6 +3,8 @@ import ToDoList from './ToDoList';
 import ToDoEdit from './ToDoEdit';
 import React from 'react';
 import { Text, View, ListView, TouchableHighlight, AlertIOS } from 'react-native';
+import CheckboxList from 'react-native-checkboxlist-0.51';
+import AccordionView from "./AccordionView"
 
 class ToDoContainer extends React.Component {
     constructor() {
@@ -71,6 +73,18 @@ class ToDoContainer extends React.Component {
                     onPress={this.openItem}>
                     <Text style={styles.buttonText}>+</Text>
                 </TouchableHighlight>
+                <CheckboxList
+                    options={[
+                        // 'Lorem ipsum dolor sit',
+                        'Lorem ipsum',
+                        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
+                        'Lorem ipsum dolor sit amet, consetetur'
+                    ]}
+                    selectedOptions={['Lorem ipsum']}
+                    // maxSelectedOptions={2}
+                    onSelection={(option)=>alert(option + ' was selected!')}
+            />
+            <AccordionView />
             </View>
         );
     }
