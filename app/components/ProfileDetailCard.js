@@ -22,12 +22,13 @@ const styles = StyleSheet.create({
 });
 
 export default ({ onPress }) => (
+  // 展开第二行 第一栏
   <View style={styles.container}>
-    <View style={{ flex: 1 }}>
+    {/* <View style={{ flex: 1 }}>
       <ThickGrayLine width={60} />
       <ThinGrayLine width={120} />
-    </View>
-
+    </View> */}
+    {/* 展开第二行 */}
     <View style={{ flex: 1 }}>
       <ThickGrayLine width={60} onPress={onPress} />
       <ThinGrayLine width={120} />

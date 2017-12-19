@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   View,
+  Text,
   StyleSheet,
 } from 'react-native';
 
@@ -13,20 +14,20 @@ import {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#33373B',
+    backgroundColor: '#3000ff',
     padding: 10,
     flexDirection: 'column',
   },
   card: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#0000FF',
     justifyContent: 'flex-end',
   },
 });
 
-export default ({ onPress }) => (
+export default ({ onPress, content }) => (
   <View style={styles.container}>
-
+    {/* 展开之后第一个卡片第1行 */}
     <View
       style={{
         flexDirection: 'row',
@@ -36,11 +37,12 @@ export default ({ onPress }) => (
         padding: 10,
       }}
     >
+      <Text>{content}</Text>
       <ThickWhiteLine width={40} onPress={onPress} />
       <ThickWhiteLine width={60} />
       <ThickWhiteLine width={40} />
     </View>
-
+    {/* 展开之后第一个卡片第二行 */}
     <View style={styles.card}>
       <View
         style={{
@@ -50,6 +52,7 @@ export default ({ onPress }) => (
           paddingBottom: 0,
         }}
       >
+      <Text>{content}</Text>
         <ThinGrayLine width={40} />
         <ThinGrayLine width={80} />
         <ThinGrayLine width={50} onPress={onPress} />

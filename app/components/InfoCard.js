@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   View,
+  Text,
   StyleSheet,
 } from 'react-native';
 
@@ -15,8 +16,10 @@ import {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff000',
+    padding: 16,
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   leftPane: {
     flex: 1,
@@ -32,19 +35,19 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ({ onPress }) => (
+export default ({ onPress, content }) => (
   <View style={styles.container}>
 
-    <View style={styles.leftPane}>
+    {/* <View style={styles.leftPane}> */}
       <ThickGrayLine />
-
+      <Text>{content}</Text>
       <View>
         <ThinRedLine onPress={onPress} />
-        <ThickGrayLine width={80} />
+        {/* <ThickGrayLine width={80} /> */}
       </View>
-    </View>
+    {/* </View> */}
 
-    <View style={styles.rightPane}>
+    {/* <View style={styles.rightPane}>
       <View style={{ flex: 1, flexDirection: 'column' }}>
         <ThickGrayLine width={140} />
         <ThickGrayLine width={160} />
@@ -61,7 +64,7 @@ export default ({ onPress }) => (
           <ThickDarkGrayLine width={60} />
         </View>
       </View>
-    </View>
+    </View> */}
 
   </View>
 );

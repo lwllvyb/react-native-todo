@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 
-import FoldView from 'react-native-foldview';
+import FoldView from 'react-native-foldview-0.51';
 
 import InfoCard from './components/InfoCard';
 import PhotoCard from './components/PhotoCard';
@@ -19,7 +19,8 @@ if (UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-const ROW_HEIGHT = 180;
+// 卡片高度
+const ROW_HEIGHT = 100;
 
 const Spacer = ({ height }) => (
   <View
@@ -71,16 +72,14 @@ export default class Row extends Component {
       height,
     });
   }
-
   renderFrontface() {
     return (
-      <InfoCard onPress={this.flip} />
+      <InfoCard onPress={this.flip} content='展开之前卡片'/>
     );
   }
-
   renderBackface() {
     return (
-      <ProfileCard onPress={this.flip} />
+      <ProfileCard onPress={this.flip} content='展开后第二卡片'/>
     );
   }
 
@@ -103,14 +102,18 @@ export default class Row extends Component {
             margin: 10,
           }}
         >
+        
           <FoldView
             expanded={this.state.expanded}
             onAnimationStart={this.handleAnimationStart}
             perspective={1000}
+              // 展开之后第二个卡片
             renderBackface={this.renderBackface}
+              // 未展开卡片
             renderFrontface={this.renderFrontface}
           >
-            <PhotoCard onPress={this.flip} />
+            {/* 展开之后第一个卡片 */}
+            <PhotoCard onPress={this.flip} content='展开第一卡片' />
           </FoldView>
 
         </View>

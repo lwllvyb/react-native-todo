@@ -30,7 +30,7 @@ export default class Row extends Component {
     return (
       <View
         style={{
-          backgroundColor: '#D6EFFF',
+          backgroundColor: '#D6E000',
           flex: 1,
         }}
       />
@@ -99,14 +99,14 @@ export default class Row extends Component {
       <View
         style={{
           flex: 1,
-          backgroundColor: '#fff',
+          backgroundColor: '#f0ff',
           flexDirection: 'column',
         }}
       >
-
+        <Text>{this.props.content}</Text>
         <View style={{ flex: 1 }} >
 
-          <View
+          {/* <View
             style={{
               flex: 1,
               paddingBottom: 10,
@@ -148,9 +148,9 @@ export default class Row extends Component {
 
             </View>
 
-          </View>
-
-          <View style={{ flex: 1 }}>
+          </View> */}
+          {/* // 在展开之后的卡片里面增加三行 */}
+          {/* <View style={{ flex: 1 }}>
 
             <FoldView
               renderFrontface={this.renderBlankFace}
@@ -159,7 +159,7 @@ export default class Row extends Component {
               <ProfileDetailCard onPress={onPress} />
             </FoldView>
 
-          </View>
+          </View> */}
 
         </View>
 

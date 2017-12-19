@@ -34,8 +34,8 @@ export default () => (
     >
       <Row zIndex={100} />
       <Row zIndex={90} />
-      <Row zIndex={80} />
-      <Row zIndex={70} />
+      <Row zIndex={10} />
+      {/* <Row zIndex={70} /> */}
     </ScrollView>
   </View>
 );
